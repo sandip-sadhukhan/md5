@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MD5 Hash Generator</title>
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+
+  <div class="container">   
+    <h1 id="title" class="u-pull-center">MD5 Hash Generator</h1>
+    <textarea id="inputField" placeholder="Enter your text here"></textarea><br>
+    <button class="button-primary" id="generateButton" onclick=generateHash()>Generate <i class="fa fa-arrow-circle-right"></i></button>
+    <div class="showdata">
+        <strong>Your Hash : </strong><span id="hash"></span><br>
+        <strong>Your String : </strong><span id="string"></span></p>
+    </div>
+    <div class="preloader">
+      <img id="preloader" src="preloader.gif" alt="Loading...." width="50px">
+    </div>
+    <div class="copyright">Developed By <a href="sandipsadhukhan.ga" target="_blank">Sandip Sadhukhan</a></a></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+  <script>
+    var generateHash = () => {
+      // take the input
+      var inputData = document.getElementById('inputField').value;
+      if(inputData === ""){
+        return;
+      }
+      var hash = md5(inputData);
+      // remove previous data
+      document.querySelector('.showdata').style.display="none";
+      document.querySelector('.preloader').style.display="block";
+      //show data
+      document.getElementById('hash').textContent = hash;
+      document.getElementById('string').textContent = inputData;
+      //preloader
+      setTimeout(function(){
+        document.querySelector('.preloader').style.display="none";
+        document.querySelector('.showdata').style.display="block";
+      },700);
+      console.log("ok",hash);
+    }      
+
+  </script>
+</body>
+</html>

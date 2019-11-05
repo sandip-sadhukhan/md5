@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    overflow-x: hidden;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+#title{
+    font-family: 'Yeon Sung', sans-serif;
+    align-content: center;
+    color:white;
+}
+textarea{
+    background: #041f2c;
+    color:white;
+    font-size: 20px;
+    width:80%;
+    height:354px;
+    padding:15px;
+}
+.preloader{
+    margin-left: 10%;
+    display: none;
+}
+.showdata{
+    color:white;
+    margin:0;
+    display: none;
+}
+.copyright{
+    color:white;
+}
